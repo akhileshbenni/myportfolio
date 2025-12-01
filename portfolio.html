@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Akhilesh R Benni | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Akhilesh R Benni - Aspiring Cybersecurity Engineer, AI & Sustainability Enthusiast." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.18);
+      --accent-2: #22c55e;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.25);
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --radius-xl: 22px;
+      --radius-2xl: 28px;
+      --nav-height: 76px;
+      --transition-fast: 0.18s ease-out;
+      --transition: 0.25s ease-out;
+    }
+
+    /* Global reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 40%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Glass card */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.96), rgba(2, 6, 23, 0.8));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(from 200deg, #22c55e, #4f46e5, #ec4899, #22c55e);
+      padding: 2px;
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.08rem;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+      color: var(--muted);
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 18px;
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.26), transparent 55%);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .nav-cta span.icon {
+      font-size: 0.9rem;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      border-color: rgba(248, 250, 252, 0.8);
+      background: radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.22), transparent 55%);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.75));
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(to right, #a855f7, #4f46e5, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    .hero-subtitle span.em {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.3), transparent 60%);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      gap: 0.4rem;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: white;
+      box-shadow: 0 18px 40px rgba(55, 65, 81, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1.5px) scale(1.01);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.95);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      backdrop-filter: blur(16px);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+    }
+
+    /* Hero right: profile card */
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-card {
+      position: relative;
+      width: 100%;
+      max-width: 350px;
+      padding: 1.6rem 1.5rem 1.5rem;
+      overflow: hidden;
+    }
+
+    .profile-bg-orbit {
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.25), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(244, 114, 182, 0.28), transparent 55%),
+        radial-gradient(circle at 50% 90%, rgba(52, 211, 153, 0.24), transparent 55%);
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .profile-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 999px;
+      border: 3px solid rgba(248, 250, 252, 0.9);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.95);
+      margin-bottom: 1rem;
+      background: radial-gradient(circle at 25% 20%, #38bdf8, #4f46e5, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .profile-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .profile-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .profile-meta {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      font-size: 0.78rem;
+    }
+
+    .meta-box {
+      padding: 0.55rem 0.65rem;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      font-size: 0.82rem;
+    }
+
+    .profile-footer {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+    }
+
+    .profile-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .social-pill {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.95);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .social-pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(248, 250, 252, 0.9);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.9);
+    }
+
+    .availability-pill {
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.16);
+      border: 1px solid rgba(22, 163, 74, 0.6);
+      color: #bbf7d0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .availability-pill span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    /* Section styles */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .about-text p + p {
+      margin-top: 0.6rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.86rem;
+    }
+
+    .about-highlight {
+      padding: 0.8rem 0.9rem;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .about-highlight span.label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .about-highlight span.value {
+      font-size: 0.92rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+      gap: 1.8rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--muted);
+    }
+
+    .skill-category {
+      margin-bottom: 1.1rem;
+    }
+
+    .skill-category h4 {
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-bars {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    .skill-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .skill-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      color: var(--muted);
+    }
+
+    .skill-bar {
+      position: relative;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      position: absolute;
+      inset: 0;
+      width: var(--w, 70%);
+      border-radius: inherit;
+      background: linear-gradient(90deg, #4f46e5, #22c55e);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      padding: 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.86rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 55px rgba(15, 23, 42, 0.9);
+      border-color: rgba(248, 250, 252, 0.9);
+    }
+
+    .project-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      align-self: flex-start;
+    }
+
+    .project-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      color: var(--muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.3rem;
+    }
+
+    .project-tag {
+      font-size: 0.74rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .project-footer {
+      margin-top: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .project-link {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      cursor: pointer;
+    }
+
+    /* Timeline (Experience / Achievements) */
+    .timeline {
+      position: relative;
+      padding-left: 1.2rem;
+      border-left: 1px dashed rgba(148, 163, 184, 0.45);
+      margin-top: 0.6rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.1rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1.27rem;
+      top: 0.15rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.08rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.32rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+    }
+
+    .contact-card {
+      padding: 1.4rem 1.3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-row {
+      margin-top: 0.7rem;
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr);
+      gap: 0.4rem;
+      font-size: 0.86rem;
+    }
+
+    .contact-label {
+      color: var(--muted);
+    }
+
+    .contact-value a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.86rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.22rem;
+    }
+
+    .field label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.98);
+      padding: 0.55rem 0.7rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      resize: vertical;
+      min-height: 38px;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.7);
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.6rem 0 2.2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      margin-top: 1.4rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        gap: 0.75rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .about-highlights {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .profile-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <div class="logo-circle">
+          <div class="logo-inner">AB</div>
+        </div>
+        <div class="brand-text">
+          <span>Akhilesh R Benni</span>
+          <span>Cybersecurity & AI | CSE</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+        <span class="icon">✉️</span>
+        <span>Contact Me</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>7th Semester CSE • Government Engineering College, Ramanagara</span>
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Akhilesh</span><br />
+            Aspiring <span class="highlight">Cybersecurity Engineer</span> building with AI, IoT & the Web.
+          </h1>
+          <p class="hero-subtitle">
+            I'm a <span class="em">computer science student</span> focused on cybersecurity, AI and sustainable tech.
+            I love turning ideas into real systems — from
+            <span class="em">AI-powered air quality monitoring</span> to
+            <span class="em">automation for plastic separation</span> and smart IoT projects.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Python & Flask</span>
+            <span class="tag">React & Next.js</span>
+            <span class="tag">MongoDB & SQL</span>
+            <span class="tag">IoT & Embedded</span>
+            <span class="tag">ML & Computer Vision</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});">
+              View My Work
+              <span>↗</span>
+            </button>
+            <button class="btn btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">
+              Download Résumé (add link)
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card profile-card">
+            <div class="profile-bg-orbit"></div>
+            <div class="profile-inner">
+              <!-- Replace avatar with your photo if you want -->
+              <div class="profile-avatar">
+                <span>AB</span>
+              </div>
+              <div class="profile-name">Akhilesh R Benni</div>
+              <div class="profile-role">Student • Cybersecurity, AI & IoT Enthusiast</div>
+
+              <div class="profile-meta">
+                <div class="meta-box">
+                  <div class="meta-label">Location</div>
+                  <div class="meta-value">Ramanagara, Karnataka, India</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">Current Focus</div>
+                  <div class="meta-value">Cybersecurity & Sustainable Tech</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">Education</div>
+                  <div class="meta-value">B.E. Computer Science (7th Sem)</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">Open To</div>
+                  <div class="meta-value">Internships & Projects</div>
+                </div>
+              </div>
+
+              <div class="profile-footer">
+                <div class="profile-links">
+                  <!-- Replace "#" with your actual links -->
+                  <a class="social-pill" href="#" title="GitHub" target="_blank" rel="noopener">🐙</a>
+                  <a class="social-pill" href="#" title="LinkedIn" target="_blank" rel="noopener">in</a>
+                  <a class="social-pill" href="mailto:youremail@example.com" title="Email">✉️</a>
+                </div>
+                <div class="availability-pill">
+                  <span class="dot"></span>
+                  <span>Available for 2026 roles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-title">Who I am & what I'm exploring</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm Akhilesh, a 7th semester Computer Science student with a strong interest in
+              <span class="em">cybersecurity, AI, and sustainable technology</span>. I enjoy understanding systems
+              end-to-end — from low-level concepts to user experience — and then building practical solutions.
+            </p>
+            <p>
+              Recently I've been exploring <span class="em">real-time stock prediction using ML</span>,
+              <span class="em">AI-powered air quality monitoring</span>, and
+              <span class="em">automated plastic separation</span> using computer vision and robotics.
+              I also have hands-on experience with IoT from my coursework and lab work.
+            </p>
+            <p>
+              Outside of projects, I actively participate in <span class="em">tech competitions</span> like
+              IndiaSkills and inter-college project expos, which push me to learn faster, work in teams, and present ideas clearly.
+            </p>
+          </div>
+          <div>
+            <div class="about-highlights">
+              <div class="about-highlight">
+                <span class="label">Tech Stack</span>
+                <span class="value">HTML, CSS, JavaScript, TypeScript, React, Next.js, Python (Flask), MongoDB, MySQL</span>
+              </div>
+              <div class="about-highlight">
+                <span class="label">Domains</span>
+                <span class="value">Cybersecurity, Machine Learning, IoT, Automation, Computer Vision</span>
+              </div>
+              <div class="about-highlight">
+                <span class="label">Goals</span>
+                <span class="value">Secure a cybersecurity-focused role, build impactful AI & IoT solutions, and contribute to sustainability projects.</span>
+              </div>
+              <div class="about-highlight">
+                <span class="label">Currently Learning</span>
+                <span class="value">Cybersecurity fundamentals, network security, Linux, and offensive security basics.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Skills</div>
+          <h2 class="section-title">Tools & technologies I work with</h2>
+          <p class="section-subtitle">
+            A mix of web development, Python backends, databases, IoT fundamentals and growing expertise in cybersecurity.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div>
+            <div class="skill-category">
+              <h4>Languages & Core</h4>
+              <div class="chip-row">
+                <span class="chip">Python</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">C / C++ (Academic)</span>
+                <span class="chip">SQL</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Web & Backend</h4>
+              <div class="chip-row">
+                <span class="chip">HTML5 & CSS3</span>
+                <span class="chip">React</span>
+                <span class="chip">Next.js</span>
+                <span class="chip">Flask</span>
+                <span class="chip">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Data, AI & IoT</h4>
+              <div class="chip-row">
+                <span class="chip">MongoDB</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">Machine Learning (Basics)</span>
+                <span class="chip">Computer Vision (Basics)</span>
+                <span class="chip">IoT Prototyping</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Cybersecurity (Learning)</h4>
+              <div class="chip-row">
+                <span class="chip">Linux Basics</span>
+                <span class="chip">Networking Fundamentals</span>
+                <span class="chip">Cryptography & Network Security</span>
+                <span class="chip">Web Security (Intro)</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="skill-bars card" style="padding: 1.1rem 1rem;">
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>Frontend (React, Next.js)</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:80%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>Python & Flask Backends</span>
+                  <span>78%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:78%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>Databases (MongoDB / MySQL)</span>
+                  <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:75%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>AI, ML & Computer Vision</span>
+                  <span>70%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:70%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>Cybersecurity Fundamentals</span>
+                  <span>65%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:65%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-row-header">
+                  <span>Soft Skills (Teamwork, Presentations)</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style="--w:85%;"></div>
+                </div>
+              </div>
+
+              <p class="contact-note" style="margin-top:0.6rem;">
+                *Values are self-assessment to show where I'm currently focusing my learning.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Projects</div>
+          <h2 class="section-title">Things I've built & explored</h2>
+          <p class="section-subtitle">
+            A mix of academic work, self-initiated experiments and competition-oriented projects.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <span class="project-badge">Featured</span>
+            <h3 class="project-title">AI-Powered Air Quality Monitoring & Prediction</h3>
+            <p class="project-desc">
+              An end-to-end system concept that uses sensor data and machine learning models to
+              monitor air quality in real-time and predict pollution levels, helping make cities more breathable.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">ML</span>
+              <span class="project-tag">IoT</span>
+              <span class="project-tag">Data Visualization</span>
+            </div>
+            <div class="project-footer">
+              <span>Final Year Project Direction</span>
+              <span class="project-link">Code / docs (coming soon)</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <span class="project-badge">Sustainability</span>
+            <h3 class="project-title">Automated Plastic Separation with Computer Vision</h3>
+            <p class="project-desc">
+              A planned system combining a robotic arm, conveyor mechanism and computer vision
+              to separate reusable and non-reusable plastic, supporting scalable waste management.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">Robotics</span>
+              <span class="project-tag">Automation</span>
+            </div>
+            <div class="project-footer">
+              <span>Prototyping & Design Phase</span>
+              <span class="project-link">Show design (soon)</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <span class="project-badge">ML</span>
+            <h3 class="project-title">Real-Time Stock Price Prediction</h3>
+            <p class="project-desc">
+              A machine learning project that experiments with historical stock data and real-time feeds
+              to forecast short-term price movements and visualize trends for users.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">APIs</span>
+            </div>
+            <div class="project-footer">
+              <span>Academic / Personal Project</span>
+              <span class="project-link">GitHub (add link)</span>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <span class="project-badge">Web</span>
+            <h3 class="project-title">Student Attendance App (Barcode-based)</h3>
+            <p class="project-desc">
+              Concept for an Android app that uses barcode scanning to manage classroom attendance,
+              with a backend storing logs, simplifying record-keeping for faculty.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Android</span>
+              <span class="project-tag">Java / Kotlin</span>
+              <span class="project-tag">Backend API</span>
+            </div>
+            <div class="project-footer">
+              <span>In Progress</span>
+              <span class="project-link">Design docs</span>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <span class="project-badge">Portfolio</span>
+            <h3 class="project-title">Personal Portfolio & Admin Dashboard</h3>
+            <p class="project-desc">
+              A customizable portfolio site with an admin section to manage projects, profile details
+              and content without touching the code, built with modern web tools.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Auth</span>
+            </div>
+            <div class="project-footer">
+              <span>Ongoing</span>
+              <span class="project-link">Live (soon)</span>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <span class="project-badge">IoT / Security</span>
+            <h3 class="project-title">Camera Surveillance with Python</h3>
+            <p class="project-desc">
+              A surveillance system concept built using Python and computer vision libraries
+              to monitor a space, detect motion, and log events for security analysis.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">Security</span>
+            </div>
+            <div class="project-footer">
+              <span>Learning Project</span>
+              <span class="project-link">Code (in progress)</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Experience</div>
+          <h2 class="section-title">Learning by doing & collaborating</h2>
+          <p class="section-subtitle">
+            I am currently a student, actively looking for internships. Here are some key experiences and opportunities.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">B.E. in Computer Science & Engineering</h3>
+            <div class="timeline-meta">Government Engineering College, Ramanagara • 7th Semester</div>
+            <p class="timeline-desc">
+              Core subjects include Data Structures, Operating Systems, Database Management Systems, IoT, Cryptography & Network Security,
+              with a special interest in cybersecurity and parallel computing.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">Cybersecurity & Tech Discussions with Industry Mentor</h3>
+            <div class="timeline-meta">Interaction with professionals (e.g., Ford India opportunity)</div>
+            <p class="timeline-desc">
+              Had the opportunity to discuss my tech stack (HTML, CSS, JavaScript, TypeScript, React, Next.js, MongoDB, SQL, Python Flask)
+              and potential internship paths, motivating me to prepare seriously for industry roles.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">Tech Seminars & Academic Presentations</h3>
+            <div class="timeline-meta">Parallel Computing, Agile Unified Process, IoT & more</div>
+            <p class="timeline-desc">
+              Delivered seminars on topics like Parallel Computing & Programming Paradigms, Agile Unified Process, and
+              Internet of Things — building strong foundations in both theory and presentation skills.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Achievements & Activities</div>
+          <h2 class="section-title">Competitions, expos & initiatives</h2>
+          <p class="section-subtitle">
+            I actively take part in events that challenge my technical ability and teamwork.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">IndiaSkills 2025 Participant</h3>
+            <div class="timeline-meta">National-level skill competition</div>
+            <p class="timeline-desc">
+              Registered and preparing for IndiaSkills 2025, focusing on sharpening my skills in programming, cybersecurity,
+              and problem-solving to compete at a higher level.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">Innovate-2025 Inter-College Project Expo</h3>
+            <div class="timeline-meta">Government Engineering College, Ramanagara</div>
+            <p class="timeline-desc">
+              Participated in a project expo that brought together innovative projects from multiple colleges,
+              showcasing ideas around smart systems, automation, and sustainable tech.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="timeline-title">Multiple Academic & Tech Events</h3>
+            <div class="timeline-meta">College-level hackathons, seminars, and department events</div>
+            <p class="timeline-desc">
+              Regularly engage in technical events, seminars, and project showcases, which has helped me improve
+              communication, collaboration, and the ability to explain complex topics simply.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-title">Let’s build something together</h2>
+          <p class="section-subtitle">
+            Whether it's an internship opportunity, a collaboration, or just a tech chat about cybersecurity, AI or IoT — feel free to reach out.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 style="font-size:0.98rem; margin-bottom:0.3rem;">Contact Information</h3>
+            <p>
+              I'm based in Ramanagara, Karnataka, India and usually respond fastest over email. You can also reach me on LinkedIn once you add your profile link here.
+            </p>
+
+            <div class="contact-row">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <!-- Replace with your real email -->
+                <a href="mailto:youremail@example.com">youremail@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">
+                <!-- Replace with your real LinkedIn -->
+                <a href="#" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">
+                <!-- Replace with your real GitHub -->
+                <a href="#" target="_blank" rel="noopener">github.com/akhilesh-benni</a>
+              </div>
+            </div>
+
+            <p class="contact-note">
+              Update these placeholders with your actual email and profile links before deploying this site.
+            </p>
+          </div>
+
+          <div>
+            <!-- Static contact form (for now) -->
+            <form class="card contact-form" onsubmit="event.preventDefault(); alert('This is a static form. Connect it to a backend or service like Formspree.');">
+              <div style="padding:1.1rem 1rem 0.2rem;">
+                <h3 style="font-size:0.98rem; margin-bottom:0.5rem;">Say Hello</h3>
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" rows="4" placeholder="Tell me about your idea or opportunity..." required></textarea>
+                </div>
+                <div style="margin-top:0.5rem;">
+                  <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+                    Send Message
+                  </button>
+                  <p class="contact-note">
+                    This form is frontend-only. Hook it to an email/API service to make it fully functional.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-row">
+      <div>
+        © <span id="year"></span> Akhilesh R Benni. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    function onScroll() {
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(sec => {
+        const top = sec.offsetTop;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute("id");
+        const link = document.querySelector('.nav-links a[href="#' + id + '"]');
+        if (!link) return;
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(a => a.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+  </script>
+</body>
+</html>
